@@ -1,8 +1,6 @@
-# CytoMorpheus
-AI-powered cell death classification using dual-modality microscopy and ensemble deep learning
 # CytoMorpheus Analyzer
 
-**AI-powered automated cell death classification using dual-modality microscopy and ensemble deep learning**
+**Multimodal Spatiotemporal Deep Learning for Real-Time Classification of Apoptosis and Necrosis Using Label-Free Microscopy**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://python.org)
@@ -12,46 +10,57 @@ AI-powered cell death classification using dual-modality microscopy and ensemble
 
 ## Overview
 
-CytoMorpheus is a deep learning pipeline for automated classification of cell death modalities (Control, Necrosis/H₂O₂, Apoptosis/Rapamycin) from label-free microscopy videos. The system supports both **Phase Contrast** and **Dark Field** microscopy modalities, automatically detected at runtime.
+CytoMorpheus is a deep learning pipeline for automated classification of cell death modalities — **Control**, **Necrosis (H₂O₂)**, and **Apoptosis (Rapamycin)** — from label-free microscopy videos of BT-20 breast cancer cells. The system supports both **Phase Contrast** and **Dark Field** modalities, automatically detected at runtime.
 
 The pipeline integrates:
-- **Cellpose** for cell segmentation
-- **Hungarian algorithm** for multi-cell tracking across video frames
-- **4-model voting ensemble** (3D-CNN, AlexNet, MobileNetV2, EfficientNet-B0) per modality
+- **Cellpose** for label-free cell segmentation
+- **Hungarian algorithm** for multi-cell tracking across frames
+- **4-model voting ensemble** (3D-CNN, AlexNet-BiLSTM, MobileNetV2, EfficientNet-B0+Transformer) per modality
 - **Automatic modality detection** (Phase Contrast vs Dark Field)
+- **Meta-learner** for cross-modality fusion
 - **Gradio-based GUI** for real-time analysis
 
 ---
 
-## Results Summary
+## Results
 
-### Phase Contrast Models (910 validation videos)
-
-| Model | Accuracy | Precision | Recall | F1 |
+### Dataset
+| Modality | Total Videos | Train | Validation | Classes |
 |---|---|---|---|---|
-| 3D-CNN | 94.18% | 94.3% | 94.2% | 94.2% |
-| AlexNet | 86.70% | 87.1% | 86.7% | 86.7% |
-| MobileNetV2 | 96.70% | 96.8% | 96.7% | 96.7% |
-| EfficientNet-B0 | 95.38% | 95.5% | 95.4% | 95.4% |
-| **Voting Ensemble** | **100%*** | - | - | - |
+| Phase Contrast | 4,549 | 3,639 | 910 | Control=219, H₂O₂=275, RAP=416 |
+| Dark Field | 3,802 | 3,041 | 761 | Control=178, H₂O₂=229, RAP=354 |
 
-### Dark Field Models (910 validation videos)
+### Phase Contrast — Individual Models (910 validation videos)
 
-| Model | Accuracy | Precision | Recall | F1 |
-|---|---|---|---|---|
-| 3D-CNN | 94.22% | 94.4% | 94.2% | 94.2% |
-| AlexNet | 80.00% | 81.2% | 80.0% | 80.0% |
-| MobileNetV2 | 83.30% | 83.7% | 83.3% | 83.2% |
-| EfficientNet-B0 | 83.30% | 83.9% | 83.3% | 83.1% |
-| **Voting Ensemble** | **96.70%** | - | - | - |
+| Model | Accuracy | F1-Macro | AUC-Macro |
+|---|---|---|---|
+| 3D-CNN | 89.34% | 88.85% | 98.02% |
+| AlexNet-BiLSTM | 88.35% | 87.77% | 97.06% |
+| MobileNetV2 | 92.09% | 91.63% | 98.38% |
+| EfficientNet-B0 | 95.38% | 94.98% | 99.52% |
+| **Voting Ensemble** | **96.26%** | **96.06%** | **99.79%** |
 
-### Universal Predictor
-| Component | Accuracy |
+### Dark Field — Individual Models (761 validation videos)
+
+| Model | Accuracy | F1-Macro | AUC-Macro |
+|---|---|---|---|
+| 3D-CNN | 94.22% | 93.93% | 99.34% |
+| AlexNet-BiLSTM | 90.67% | 89.47% | 97.12% |
+| MobileNetV2 | 88.17% | 87.31% | 96.88% |
+| EfficientNet-B0 | — | — | — |
+| **Voting Ensemble** | **94.09%** | **93.48%** | **99.54%** |
+
+### Universal Predictor — Combined (1,671 videos)
+
+| Component | Result |
 |---|---|
-| Modality Detector | 100% |
-| Cross-modal Meta-Learner | 95.51% |
-
-*On 30-video test subset
+| Modality Detection | 99.04% |
+| Overall Accuracy | 95.51% |
+| F1-Macro | 95.20% |
+| AUC-Macro | 99.50% |
+| Control (F1) | 92.56% |
+| H₂O₂ / Necrosis (F1) | 96.89% |
+| RAP / Apoptosis (F1) | 96.17% |
 
 ---
 
@@ -59,20 +68,20 @@ The pipeline integrates:
 ```
 CytoMorpheus/
 ├── 01_Training/
-│   ├── Phase_Contrast/        # Phase contrast model training notebooks
+│   ├── Phase_Contrast/
 │   │   ├── 3DCNN.ipynb
 │   │   ├── AlexNet.ipynb
 │   │   ├── MobileNetV2.ipynb
 │   │   └── EfficientNet.ipynb
-│   └── Dark_Field/            # Dark field model training notebooks
+│   └── Dark_Field/
 │       ├── 3DCNN.ipynb
 │       ├── AlexNet.ipynb
 │       ├── MobileNetV2.ipynb
 │       └── EfficientNet.ipynb
 ├── 02_Evaluation/
-│   └── Full_Evaluation.ipynb  # Complete evaluation, ensembles, figures
+│   └── Full_Evaluation.ipynb
 ├── 03_GUI/
-│   └── CytoMorpheus_Analyzer.ipynb  # Gradio-based analysis GUI
+│   └── CytoMorpheus_Analyzer.ipynb
 ├── requirements.txt
 └── README.md
 ```
@@ -84,23 +93,26 @@ CytoMorpheus/
 Input Video
     │
     ▼
-Modality Detection (Phase / Dark Field)
+Modality Detection (Phase Contrast / Dark Field)  →  99.04% accuracy
     │
     ▼
-Cellpose Segmentation (cyto3)
+Cellpose Segmentation (cyto3 model)
     │
     ▼
 Cell Tracking (Hungarian Algorithm)
     │
     ▼
-30-Frame Sequence Building per Cell
+30-Frame Sequence per Cell (224×224, step=2)
     │
     ▼
-4-Model Ensemble Voting
-(3D-CNN + AlexNet + MobileNetV2 + EfficientNet)
+4-Model Voting Ensemble
+(3D-CNN + AlexNet-BiLSTM + MobileNetV2 + EfficientNet-B0)
     │
     ▼
-Classification: Control | Necrosis | Apoptosis
+Meta-Learner Fusion (cross-modality)
+    │
+    ▼
+Classification: Control | Necrosis (H₂O₂) | Apoptosis (RAP)
 ```
 
 ---
@@ -116,40 +128,17 @@ pip install opencv-python numpy scipy scikit-learn
 
 ---
 
-## Data
-
-Videos are 30-frame sequences (224×224) from label-free microscopy:
-- **Classes:** Control, H₂O₂ (Necrosis), Rapamycin (Apoptosis)
-- **Modalities:** Phase Contrast, Dark Field
-- **Split:** 80% train / 20% validation (stratified, seed=42)
-
----
-
----
-
-## Journal Paper
-
-This repository accompanies the following manuscript currently under review:
-
-> **Md Saimun Alam**, Somaiyeh Khoubafarin Doust, Aniruddha Ray*  
-> *"Multimodal Spatiotemporal Deep Learning for Real-Time Classification of Apoptosis and Necrosis Using Label-Free Microscopy"*  
-> Machine Learning: Science and Technology (MLST), IOP Publishing *(under review)*
-
----
 
 ## Author
 
-**Md Saimun Alam**  
-PhD Student, Department of Physics and Astronomy  
-University of Toledo, Toledo, OH 43606, USA  
-📧 Mdsaimun.alam@rockets.utoledo.edu  
+**Md Saimun Alam**
+PhD Student, Department of Physics and Astronomy
+University of Toledo, Toledo, OH 43606, USA
+📧 Mdsaimun.alam@rockets.utoledo.edu
 
-**Biophotonics & AI Laboratory**  
+**Biophotonics & AI Laboratory**
 Principal Investigator: Dr. Aniruddha Ray
 
----
-
-## Collaborators
-
+**Collaborators**
 - Somaiyeh Khoubafarin Doust — University of Toledo
 - Dr. Aniruddha Ray — University of Toledo (PI)
