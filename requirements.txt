@@ -1,0 +1,25 @@
+# CytoMorpheus — Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Deep learning
+tensorflow>=2.13.0
+keras>=2.13.0
+
+# Computer vision
+opencv-python>=4.8.0
+cellpose>=2.2.0
+
+# Scientific computing
+numpy>=1.24.0
+scipy>=1.11.0
+
+# Data handling
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# GUI
+gradio>=4.0.0
