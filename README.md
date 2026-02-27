@@ -125,20 +125,31 @@ Videos are 30-frame sequences (224×224) from label-free microscopy:
 
 ---
 
-## Citation
+---
 
-If you use this work, please cite:
-```
-Md Saimun Alam et al.
-"Deep learning-based screening of sperm centriole integrity using 
-multimodal optical microscopy"
-SPIE Photonics West 2026
-```
+## Journal Paper
+
+This repository accompanies the following manuscript currently under review:
+
+> **Md Saimun Alam**, Somaiyeh Khoubafarin Doust, Aniruddha Ray*  
+> *"Multimodal Spatiotemporal Deep Learning for Real-Time Classification of Apoptosis and Necrosis Using Label-Free Microscopy"*  
+> Machine Learning: Science and Technology (MLST), IOP Publishing *(under review)*
 
 ---
 
 ## Author
 
 **Md Saimun Alam**  
-PhD Student, Physics — University of Toledo  
-Biophotonics & AI Laboratory (Dr. Aniruddha Ray)
+PhD Student, Department of Physics and Astronomy  
+University of Toledo, Toledo, OH 43606, USA  
+📧 Mdsaimun.alam@rockets.utoledo.edu  
+
+**Biophotonics & AI Laboratory**  
+Principal Investigator: Dr. Aniruddha Ray
+
+---
+
+## Collaborators
+
+- Somaiyeh Khoubafarin Doust — University of Toledo
+- Dr. Aniruddha Ray — University of Toledo (PI)
