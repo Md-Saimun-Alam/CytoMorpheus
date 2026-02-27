@@ -47,7 +47,7 @@ The pipeline integrates:
 | 3D-CNN | 94.22% | 93.93% | 99.34% |
 | AlexNet-BiLSTM | 90.67% | 89.47% | 97.12% |
 | MobileNetV2 | 88.17% | 87.31% | 96.88% |
-| EfficientNet-B0 | — | — | — |
+| EfficientNet-B0 | 91.85% | 91.15% | 98.17% |
 | **Voting Ensemble** | **94.09%** | **93.48%** | **99.54%** |
 
 ### Universal Predictor — Combined (1,671 videos)
