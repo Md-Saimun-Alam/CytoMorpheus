@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# data and model outputs, too large for the repository
+00_data/
+01_models*/
+02_results/
+03_figures/
+work/
+*.npy
+*.npz
+*.pt
+*.avi
+*.tif
+*.tiff
+
+# PyInstaller
+gui/build/
+gui/dist/
+*.manifest
+
+.DS_Store
+Thumbs.db

@@ -1,25 +1,26 @@
-# CytoMorpheus — Python Dependencies
-# Install with: pip install -r requirements.txt
+# CytoMorpheus — Python dependencies
+# Install PyTorch for your own CUDA version first:
+#   https://pytorch.org/get-started/locally/
 
-# Deep learning
-tensorflow>=2.13.0
-keras>=2.13.0
+torch>=2.1
+torchvision>=0.16
 
-# Computer vision
-opencv-python>=4.8.0
-cellpose>=2.2.0
+# segmentation
+cellpose>=4.0            # Cellpose-SAM
 
-# Scientific computing
-numpy>=1.24.0
-scipy>=1.11.0
+# imaging and numerics
+opencv-python>=4.8
+numpy>=1.24
+scipy>=1.11
+pandas>=2.0
+scikit-learn>=1.3
+scikit-image>=0.22
 
-# Data handling
-pandas>=2.0.0
-scikit-learn>=1.3.0
+# figures
+matplotlib>=3.7
 
-# Visualization
-matplotlib>=3.7.0
-seaborn>=0.12.0
+# GUI (tkinter ships with Python; Pillow is used for the icons)
+Pillow>=10.0
 
-# GUI
-gradio>=4.0.0
+# building the Windows application
+# pyinstaller>=6.0

@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it as below. The paper describing it is under review; see preferred-citation.
+type: software
+title: CytoMorpheus
+version: 1.0.0
+date-released: "2026-10-07"
+repository-code: https://github.com/Md-Saimun-Alam/CytoMorpheus
+license: MIT
+authors:
+  - given-names: Md Saimun
+    family-names: Alam
+    affiliation: Department of Physics and Astronomy, University of Toledo
+    email: mdsaimun.alam@rockets.utoledo.edu
+  - given-names: Somaiyeh
+    family-names: Khoubafarin Doust
+    affiliation: Department of Physics and Astronomy, University of Toledo
+  - given-names: Aniruddha
+    family-names: Ray
+    affiliation: Department of Physics and Astronomy and Northwest Ohio Cancer Research Institute, University of Toledo
+    email: aniruddha.ray@utoledo.edu
+preferred-citation:
+  type: article
+  status: submitted
+  title: Deep Learning Assisted Label-Free Microscopy for Cell Death Analysis in Real-Time
+  journal: Journal of Biophotonics
+  year: 2026
+  authors:
+    - given-names: Md Saimun
+      family-names: Alam
+    - given-names: Somaiyeh
+      family-names: Khoubafarin Doust
+    - given-names: Aniruddha
+      family-names: Ray
