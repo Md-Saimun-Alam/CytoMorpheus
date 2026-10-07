@@ -10,7 +10,7 @@
 
 ## Overview
 
-CytoMorpheus classifies individual BT-20 cells as **Control**, **Apoptosis (Raptinal)** or **Necrosis (H₂O₂)** from label-free phase-contrast and dark-field time-lapse videos. Propidium iodide (PI) is used only to label the training cells. It is not needed at analysis time.
+CytoMorpheus classifies individual BT-20 cells as **Control**, **Apoptosis (Raptinal)** or **Necrosis (H₂O₂)** from label-free phase-contrast and dark-field time-lapse videos. Propidium iodide (PI) is used only to label the training cells.
 
 The pipeline includes:
 - **Cellpose-SAM** for cell segmentation
