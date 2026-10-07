@@ -139,7 +139,7 @@ python gui/cytomorpheus_analyzer.py
 
 ## Data and Trained Models
 
-Raw videos and trained model weights are not in this repository because of their size. They are available from the corresponding author on request. The Analyzer expects weights in `models/<architecture>/model_{phase,dark}_LORO_F1_s{0,1,2}.pt`.
+Raw videos and trained model weights are not in this repository because of their size. They are available from the corresponding author on request.
 
 ---
 
