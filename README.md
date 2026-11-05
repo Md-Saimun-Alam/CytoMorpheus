@@ -145,7 +145,7 @@ Raw videos and trained model weights are not in this repository because of their
 
 ## Citation
 
-The paper describing this work is under review at *Journal of Biophotonics*. Until it is published, please cite the software:
+The paper describing this work has been accepted for publication in *Journal of Biophotonics*. Until it is published online, please cite the software:
 
 ```
 Alam, M. S., Khoubafarin Doust, S., & Ray, A. (2026). CytoMorpheus (Version 1.0.0) [Computer software]. https://github.com/Md-Saimun-Alam/CytoMorpheus
@@ -162,7 +162,7 @@ PhD Student, Department of Physics and Astronomy
 University of Toledo, Toledo, OH 43606, USA
 📧 Mdsaimun.alam@rockets.utoledo.edu
 
-**Biophotonics & AI Laboratory**
+**[Ray Research Laboratory](https://www.utoledo.edu/nsm/physast/people/aniruddha-ray.html)**
 Principal Investigator: Dr. Aniruddha Ray
 
 **Collaborators**

@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: If you use this software, please cite it as below. The paper describing it is under review; see preferred-citation.
+message: If you use this software, please cite it as below. The paper describing it has been accepted in Journal of Biophotonics; see preferred-citation.
 type: software
 title: CytoMorpheus
 version: 1.0.0
@@ -20,7 +20,7 @@ authors:
     email: aniruddha.ray@utoledo.edu
 preferred-citation:
   type: article
-  status: submitted
+  status: in-press
   title: Deep Learning Assisted Label-Free Microscopy for Cell Death Analysis in Real-Time
   journal: Journal of Biophotonics
   year: 2026
