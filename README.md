@@ -162,7 +162,7 @@ PhD Student, Department of Physics and Astronomy
 University of Toledo, Toledo, OH 43606, USA
 📧 Mdsaimun.alam@rockets.utoledo.edu
 
-**[Ray Research Laboratory](https://www.utoledo.edu/nsm/physast/people/aniruddha-ray.html)**
+**[Ray Research Laboratory](https://www.rayresearchlab.com/)**
 Principal Investigator: Dr. Aniruddha Ray
 
 **Collaborators**
