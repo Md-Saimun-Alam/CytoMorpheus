@@ -145,13 +145,26 @@ Raw videos and trained model weights are not in this repository because of their
 
 ## Citation
 
-The paper describing this work has been accepted for publication in *Journal of Biophotonics*. Until it is published online, please cite the software:
+The paper describing this work is published in *Journal of Biophotonics*. If you use this code, please cite:
 
 ```
-Alam, M. S., Khoubafarin Doust, S., & Ray, A. (2026). CytoMorpheus (Version 1.0.0) [Computer software]. https://github.com/Md-Saimun-Alam/CytoMorpheus
+Alam, M. S., Khoubafarin Doust, S., & Ray, A. (2026). Deep Learning Assisted Label-Free Microscopy for Cell Death Analysis in Real-Time. Journal of Biophotonics, 19(11), e70392. https://doi.org/10.1002/jbio.70392
 ```
 
-The citation will be updated with the article DOI on publication. See `CITATION.cff`.
+```bibtex
+@article{alam2026cytomorpheus,
+  author  = {Alam, Md Saimun and Khoubafarin Doust, Somaiyeh and Ray, Aniruddha},
+  title   = {Deep Learning Assisted Label-Free Microscopy for Cell Death Analysis in Real-Time},
+  journal = {Journal of Biophotonics},
+  volume  = {19},
+  number  = {11},
+  pages   = {e70392},
+  year    = {2026},
+  doi     = {10.1002/jbio.70392}
+}
+```
+
+See also `CITATION.cff`.
 
 ---
 
