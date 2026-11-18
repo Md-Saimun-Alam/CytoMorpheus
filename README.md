@@ -5,6 +5,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-ee4c2c.svg)](https://pytorch.org)
+[![DOI](https://img.shields.io/badge/DOI-10.1002%2Fjbio.70392-blue.svg)](https://doi.org/10.1002/jbio.70392)
+
+Code for the paper published in *Journal of Biophotonics* 19(11), e70392 (2026): https://doi.org/10.1002/jbio.70392
 
 ---
 
@@ -19,6 +22,10 @@ The pipeline includes:
 - **4-model voting ensemble** per modality (3D-CNN, AlexNet-BiLSTM, MobileNetV2, EfficientNet-B0+Transformer), 3 seeds each
 - **Cross-modality fusion** by averaging the probabilities of the phase-contrast and dark-field models
 - **CytoMorpheus Analyzer**, a desktop GUI for analyzing raw videos
+
+![CytoMorpheus Analyzer showing a field of cells outlined by predicted class](docs/analyzer.jpg)
+
+*CytoMorpheus Analyzer on a Raptinal-treated recording. Each cell is outlined by its predicted class, and the panel on the right shows the class probabilities for the selected cell.*
 
 ---
 
@@ -71,6 +78,8 @@ CytoMorpheus/
 │   ├── table_heldout_and_fusion.csv     Table 1
 │   ├── metrics_per_seed_heldout.csv     per-seed values behind Table 1
 │   └── detector_vs_PI_heldout.csv       label-free rupture detection vs PI (Figure S1)
+├── docs/
+│   └── analyzer.jpg           screenshot of the Analyzer
 ├── CITATION.cff
 ├── requirements.txt
 └── README.md
